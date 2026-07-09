@@ -107,8 +107,8 @@ const projects: Project[] = [
     id: "zerodha-clone",
     category: "Stock Trading",
     title: "Zerodha Clone",
-    src: PLACEHOLDER_IMG,
-    screenshots: [],
+    src: `${BASE_PATH}/zerodha-clone.png`,
+    screenshots: ["zerodha-clone.png"],
     live: "#",
     github: "https://github.com/KuldeepLakhera9",
     skills: {
@@ -139,13 +139,14 @@ const projects: Project[] = [
             </ul>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4 mb-6">
             <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Challenges Solved</h5>
             <p className="text-sm text-muted-foreground">
               Developing a robust state synchronization model to simulate live market movements on the client while maintaining consistent ledger balances on the REST backend.
             </p>
           </div>
 
+          <SlideShow images={[`${BASE_PATH}/zerodha-clone.png`]} />
           <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
@@ -155,8 +156,8 @@ const projects: Project[] = [
     id: "wanderlust",
     category: "Marketplace",
     title: "Wanderlust",
-    src: PLACEHOLDER_IMG,
-    screenshots: [],
+    src: `${BASE_PATH}/wanderlust.png`,
+    screenshots: ["wanderlust.png"],
     live: "#",
     github: "https://github.com/KuldeepLakhera9",
     skills: {
@@ -189,13 +190,14 @@ const projects: Project[] = [
             </ul>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4 mb-6">
             <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Performance Achievements</h5>
             <p className="text-sm text-muted-foreground">
               Improved database response times by **20%** through streamlined index optimizations and custom Express middleware.
             </p>
           </div>
 
+          <SlideShow images={[`${BASE_PATH}/wanderlust.png`]} />
           <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
@@ -205,8 +207,8 @@ const projects: Project[] = [
     id: "quizpulse",
     category: "Real-Time Gaming",
     title: "QuizPulse",
-    src: PLACEHOLDER_IMG,
-    screenshots: [],
+    src: `${BASE_PATH}/quizpulse.png`,
+    screenshots: ["quizpulse.png"],
     live: "#",
     github: "https://github.com/KuldeepLakhera9",
     skills: {
@@ -238,13 +240,14 @@ const projects: Project[] = [
             </ul>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4 mb-6">
             <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Tech Architecture</h5>
             <p className="text-sm text-muted-foreground">
               Built on a standard MERN stack utilizing Socket.io event triggers to synchronize player answer inputs with minimal latency under concurrent scenarios.
             </p>
           </div>
 
+          <SlideShow images={[`${BASE_PATH}/quizpulse.png`]} />
           <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );

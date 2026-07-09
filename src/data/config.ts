@@ -1,41 +1,43 @@
 const config = {
-  title: "Akash Malhotra | Co-Founder & Engineer",
+  title: "Kuldeep Pravin Lakhera | Full Stack Web Developer & Software Engineer",
   description: {
-    long: "Explore the portfolio of Akash Malhotra — Co-Founder of CallHQ.ai, Broki, and Otoma8. Former Senior Lead Software Engineer at Adobe with 12+ years building AI voice agents, commerce platforms, and scalable products.",
+    long: "Explore the portfolio of Kuldeep Pravin Lakhera — B.Tech in Computer Engineering student and Full Stack Web Developer. Experienced in building high-performance MERN applications, real-time WebSocket systems, and scalable APIs.",
     short:
-      "Portfolio of Akash Malhotra — Co-Founder, engineer, and ex-Adobe tech lead building AI and commerce products.",
+      "Portfolio of Kuldeep Pravin Lakhera — Full Stack Web Developer and Computer Engineering student specializing in the MERN stack and real-time systems.",
   },
   keywords: [
-    "Akash Malhotra",
+    "Kuldeep Pravin Lakhera",
+    "Kuldeep Lakhera",
     "portfolio",
-    "CallHQ",
-    "Broki",
-    "Otoma8",
-    "voice AI",
-    "full-stack developer",
-    "co-founder",
-    "Adobe",
-    "React",
-    "Next.js",
-    "TypeScript",
+    "Full Stack Developer",
+    "Software Engineer",
+    "MERN Stack",
+    "React Developer",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Socket.io",
+    "Computer Engineering",
+    "VPKBIET",
   ],
-  author: "Akash Malhotra",
-  email: "contact@broki.in",
-  site: "https://broki.in",
+  author: "Kuldeep Pravin Lakhera",
+  email: "kuldeeplakhera018@gmail.com",
+  site: "https://kuldeeplakhera.com", // Placeholder or personal domain
 
   // for github stars button
-  githubUsername: "akashrmalhotra",
-  githubRepo: "3d-portfolio-next",
+  githubUsername: "KuldeepLakhera9",
+  githubRepo: "Portfolio",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://www.linkedin.com/in/akashrmalhotra",
-    linkedin: "https://www.linkedin.com/in/akashrmalhotra",
-    instagram: "https://www.linkedin.com/in/akashrmalhotra",
-    facebook: "https://www.linkedin.com/in/akashrmalhotra",
-    github: "https://github.com/akashrmalhotra",
+    twitter: "https://linkedin.com/in/kuldeep-lakhera", // fallback to LinkedIn if Twitter isn't on resume
+    linkedin: "https://linkedin.com/in/kuldeep-lakhera",
+    instagram: "https://github.com/KuldeepLakhera9", // fallback to GitHub
+    facebook: "https://github.com/KuldeepLakhera9",
+    github: "https://github.com/KuldeepLakhera9",
   },
 };
 export { config };
+

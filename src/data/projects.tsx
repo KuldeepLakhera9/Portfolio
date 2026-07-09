@@ -28,21 +28,35 @@ const MaskIcon = ({ src, title }: { src: string; title?: string }) => (
   />
 );
 
-const ProjectsLinks = ({ live }: { live?: string }) => {
-  if (!live || live === "#") return null;
+const ProjectsLinks = ({ live, github }: { live?: string; github?: string }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
-        className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
-        href={live}
-      >
-        <Button variant={"default"} size={"sm"}>
-          Visit Website
-          <ArrowUpRight className="ml-3 w-5 h-5" />
-        </Button>
-      </Link>
+      {live && live !== "#" && (
+        <Link
+          className="font-mono underline flex gap-2"
+          rel="noopener"
+          target="_new"
+          href={live}
+        >
+          <Button variant={"default"} size={"sm"}>
+            Visit Website
+            <ArrowUpRight className="ml-2 w-4 h-4" />
+          </Button>
+        </Link>
+      )}
+      {github && github !== "#" && (
+        <Link
+          className="font-mono underline flex gap-2"
+          rel="noopener"
+          target="_new"
+          href={github}
+        >
+          <Button variant={"outline"} size={"sm"}>
+            GitHub Repository
+            <ArrowUpRight className="ml-2 w-4 h-4" />
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };
@@ -62,20 +76,18 @@ const brand = (title: string, file: string): Skill => ({
 });
 
 const PROJECT_SKILLS = {
-  next: brand("Next.js", "nextdotjs-mono.svg"),
   react: brand("React.js", "react-mono.svg"),
   ts: brand("TypeScript", "typescript-mono.svg"),
-  tailwind: brand("Tailwind", "tailwind-css-mono.svg"),
+  tailwind: brand("Tailwind CSS", "tailwind-css-mono.svg"),
   node: brand("Node.js", "nodedotjs-mono.svg"),
   python: brand("Python", "python-mono.svg"),
   postgres: brand("PostgreSQL", "postgresql-mono.svg"),
   mongo: brand("MongoDB", "mongodb-mono.svg"),
-  aiSDK: brand("Vercel AI SDK", "vercel-mono.svg"),
-  anthropic: brand("Anthropic Claude", "anthropic-mono.svg"),
-  mistral: brand("Mistral AI", "mistral-ai-mono.svg"),
-  sockerio: brand("Socket.io", "socketdotio-mono.svg"),
-  docker: brand("Docker", "docker-mono.svg"),
-  aws: brand("AWS", "cloudflare-mono.svg"),
+  express: brand("Express.js", "express-mono.svg"),
+  js: brand("JavaScript", "javascript-mono.svg"),
+  socketio: brand("Socket.io", "socketdotio-mono.svg"),
+  mapbox: brand("Mapbox API", "xyflow-mono.svg"), // reuse xyflow as map representation
+  cloudinary: brand("Cloudinary", "cloudflare-mono.svg"), // reuse cloudflare as cloud upload asset
 };
 
 export type Project = {
@@ -92,180 +104,148 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: "callhq",
-    category: "Voice AI",
-    title: "CallHQ.ai",
-    src: `${BASE_PATH}/callhq/callhq.png`,
-    screenshots: ["callhq.png"],
-    live: "https://callhq.ai",
+    id: "zerodha-clone",
+    category: "Stock Trading",
+    title: "Zerodha Clone",
+    src: PLACEHOLDER_IMG,
+    screenshots: [],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.js,
         PROJECT_SKILLS.react,
         PROJECT_SKILLS.tailwind,
       ],
       backend: [
         PROJECT_SKILLS.node,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.aiSDK,
-        PROJECT_SKILLS.anthropic,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            AI-powered voice agents for sales, customer engagement, and lead
-            generation — natural, human-like phone conversations at scale.
-          </TypographyP>
-          <ProjectsLinks live={this.live} />
-          <SlideShow images={[`${BASE_PATH}/callhq/callhq.png`]} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "broki",
-    category: "Marketplace",
-    title: "Broki",
-    src: `${BASE_PATH}/broki/broki.png`,
-    screenshots: ["broki.png"],
-    live: "https://broki.in",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.express,
         PROJECT_SKILLS.mongo,
       ],
     },
     get content() {
       return (
-        <div>
-          <TypographyP className="font-mono">
-            One-stop marketplace for food &amp; beverage — cloud kitchens,
-            restaurants, and commercial spaces across Delhi NCR.
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            Engineered a full-stack stock trading platform modeled on Zerodha, featuring live market data visualization, order placement, and portfolio tracking.
           </TypographyP>
-          <ProjectsLinks live={this.live} />
-          <SlideShow images={[`${BASE_PATH}/broki/broki.png`]} />
+          
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Engineered full-stack stock trading platform with dynamic charting</li>
+              <li>Designed secure authentication and a RESTful backend for portfolio management</li>
+              <li>Built a responsive React front-end with real-time portfolio tracking</li>
+            </ul>
+          </div>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Challenges Solved</h5>
+            <p className="text-sm text-muted-foreground">
+              Developing a robust state synchronization model to simulate live market movements on the client while maintaining consistent ledger balances on the REST backend.
+            </p>
+          </div>
+
+          <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
     },
   },
   {
-    id: "whatsapp",
-    category: "Messaging",
-    title: "CallHQ WhatsApp",
-    src: `${BASE_PATH}/whatsapp/whatsapp.png`,
-    screenshots: ["whatsapp.png"],
-    live: "https://whatsapp.callhq.ai",
-    skills: {
-      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.ts, PROJECT_SKILLS.tailwind],
-      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.sockerio],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            WhatsApp integration layer for CallHQ — automate customer
-            conversations and workflows over WhatsApp Business.
-          </TypographyP>
-          <ProjectsLinks live={this.live} />
-          <SlideShow images={[`${BASE_PATH}/whatsapp/whatsapp.png`]} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "orrdr",
-    category: "Commerce",
-    title: "Orrdr",
-    src: `${BASE_PATH}/orrdr/orrdr.png`,
-    screenshots: ["orrdr.png"],
-    live: "https://orrdr.com",
+    id: "wanderlust",
+    category: "Marketplace",
+    title: "Wanderlust",
+    src: PLACEHOLDER_IMG,
+    screenshots: [],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.postgres],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            Commerce platform for ordering and fulfillment.
-          </TypographyP>
-          <ProjectsLinks live={this.live} />
-          <SlideShow images={[`${BASE_PATH}/orrdr/orrdr.png`]} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "otoma8",
-    category: "AI Platform",
-    title: "Otoma8",
-    src: `${BASE_PATH}/otoma8/otoma8.png`,
-    screenshots: ["otoma8.png"],
-    live: "https://otoma8.com",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.js,
         PROJECT_SKILLS.react,
         PROJECT_SKILLS.tailwind,
       ],
       backend: [
         PROJECT_SKILLS.node,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.aiSDK,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.mapbox,
+        PROJECT_SKILLS.cloudinary,
       ],
     },
     get content() {
       return (
-        <div>
-          <TypographyP className="font-mono">
-            AI platform co-founded alongside CallHQ and Broki — building the next
-            generation of business automation tools.
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            Architected a scalable lodging marketplace with secure JWT-based authentication and full CRUD functionality for property listings.
           </TypographyP>
-          <ProjectsLinks live={this.live} />
-          <SlideShow images={[`${BASE_PATH}/otoma8/otoma8.png`]} />
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Robust JWT-based user authentication and CRUD property posting capabilities</li>
+              <li>Mapbox API integration for interactive real-time geolocation searches</li>
+              <li>Optimized Cloudinary integrations for fast, responsive image loading and hosting</li>
+            </ul>
+          </div>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Performance Achievements</h5>
+            <p className="text-sm text-muted-foreground">
+              Improved database response times by **20%** through streamlined index optimizations and custom Express middleware.
+            </p>
+          </div>
+
+          <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
     },
   },
   {
-    id: "tesorobysania",
-    category: "E-commerce",
-    title: "Tesoro by Sania",
+    id: "quizpulse",
+    category: "Real-Time Gaming",
+    title: "QuizPulse",
     src: PLACEHOLDER_IMG,
     screenshots: [],
-    live: "https://tesorobysania.com",
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.js,
         PROJECT_SKILLS.react,
         PROJECT_SKILLS.tailwind,
       ],
-      backend: [PROJECT_SKILLS.node],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.socketio,
+      ],
     },
     get content() {
       return (
-        <div>
-          <TypographyP className="font-mono">
-            Premium e-commerce storefront for Tesoro by Sania.
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            Developed a live quiz hosting platform enabling users to create, host, and participate in multiplayer quizzes in real time.
           </TypographyP>
-          <ProjectsLinks live={this.live} />
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>WebSocket-driven live connection management via Socket.io</li>
+              <li>Real-time score synchronizations and instant user leaderboards</li>
+              <li>Polished responsive hosting dashboards and contestant gameplay layouts</li>
+            </ul>
+          </div>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Tech Architecture</h5>
+            <p className="text-sm text-muted-foreground">
+              Built on a standard MERN stack utilizing Socket.io event triggers to synchronize player answer inputs with minimal latency under concurrent scenarios.
+            </p>
+          </div>
+
+          <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
     },

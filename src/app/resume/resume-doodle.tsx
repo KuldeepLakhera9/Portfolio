@@ -14,11 +14,11 @@ const COLORS = [
 ];
 
 export default function ResumeDoodle({
-  src,
   title,
+  children,
 }: {
-  src: string;
   title: string;
+  children: React.ReactNode;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -113,11 +113,9 @@ export default function ResumeDoodle({
 
   return (
     <div ref={wrapRef} className="relative h-full">
-      <iframe
-        src={src}
-        title={title}
-        className="relative z-0 block h-full w-full bg-white"
-      />
+      <div className="relative z-0 h-full w-full bg-white text-black overflow-y-auto">
+        {children}
+      </div>
 
       {/* Doodle layer */}
       <canvas

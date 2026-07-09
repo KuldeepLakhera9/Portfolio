@@ -1,9 +1,9 @@
 import ResumeView from "./resume-view";
 
 export const metadata = {
-  title: "Résumé | Akash Malhotra",
+  title: "Résumé | Kuldeep Pravin Lakhera",
   description:
-    "Résumé of Akash Malhotra — Co-Founder & Engineer. View online or download the PDF.",
+    "Résumé of Kuldeep Pravin Lakhera — Full Stack Web Developer & Software Engineer. View online or save as PDF.",
 };
 
 export default function ResumePage() {

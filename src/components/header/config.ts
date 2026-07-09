@@ -17,20 +17,25 @@ const links: Link[] = [
     thumbnail: '/assets/nav-link-previews/skills.png'
   },
   {
+    title: 'Experience',
+    href: '/#experience',
+    thumbnail: '/assets/nav-link-previews/skills.png'
+  },
+  {
     title: 'Projects',
     href: '/#projects',
     thumbnail: '/assets/nav-link-previews/projects.png'
   },
-  // {
-  //   title: 'Skills',
-  //   href: '/skills',
-  //   thumbnail: '/assets/nav-link-previews/skills.png'
-  // },
-  // {
-  //   title: 'Testimonials',
-  //   href: '/testimonials',
-  //   thumbnail: '/assets/nav-link-previews/testimonials.png'
-  // },
+  {
+    title: 'Education',
+    href: '/#education',
+    thumbnail: '/assets/nav-link-previews/about.png'
+  },
+  {
+    title: 'Achievements',
+    href: '/#achievements',
+    thumbnail: '/assets/nav-link-previews/projects.png'
+  },
   {
     title: 'Blogs',
     href: '/blogs',
@@ -44,3 +49,4 @@ const links: Link[] = [
 ];
 
 export { links };
+

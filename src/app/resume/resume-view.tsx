@@ -111,9 +111,9 @@ export default function ResumeView() {
                     (+91) 9325299923
                   </span>
                   <span className="text-gray-300 hidden sm:inline">|</span>
-                  <a href="https://linkedin.com/in/kuldeep-lakhera" target="_blank" className="flex items-center gap-1 hover:text-blue-600 hover:underline">
+                  <a href="https://www.linkedin.com/in/kuldeep-lakhera-a78373290/" target="_blank" className="flex items-center gap-1 hover:text-blue-600 hover:underline">
                     <Linkedin className="w-3.5 h-3.5" />
-                    linkedin.com/in/kuldeep-lakhera
+                    linkedin.com/in/kuldeep-lakhera-a78373290/
                   </a>
                   <span className="text-gray-300 hidden sm:inline">|</span>
                   <a href="https://github.com/KuldeepLakhera9" target="_blank" className="flex items-center gap-1 hover:text-blue-600 hover:underline">

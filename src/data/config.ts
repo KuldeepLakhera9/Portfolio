@@ -31,8 +31,8 @@ const config = {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://linkedin.com/in/kuldeep-lakhera", // fallback to LinkedIn if Twitter isn't on resume
-    linkedin: "https://linkedin.com/in/kuldeep-lakhera",
+    twitter: "https://www.linkedin.com/in/kuldeep-lakhera-a78373290/", // fallback to LinkedIn if Twitter isn't on resume
+    linkedin: "https://www.linkedin.com/in/kuldeep-lakhera-a78373290/",
     instagram: "https://github.com/KuldeepLakhera9", // fallback to GitHub
     facebook: "https://github.com/KuldeepLakhera9",
     github: "https://github.com/KuldeepLakhera9",

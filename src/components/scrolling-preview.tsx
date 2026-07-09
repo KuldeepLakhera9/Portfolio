@@ -82,8 +82,8 @@ const ScrollingPreview = ({
     };
   }, [bg]);
 
-  const scrolls = scrollPx > 0;
-  const animate = !reduceMotion && scrolls;
+  const scrolls = false;
+  const animate = false;
 
   const pan = scrollPx / PAN_SPEED;
   const total = pan * 2 + PAUSE * 2;

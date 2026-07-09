@@ -1,12 +1,11 @@
 const config = {
-  title: "Kuldeep Pravin Lakhera | Full Stack Web Developer & Software Engineer",
+  title: "Kuldeep Lakhera | Full Stack Web Developer & Software Engineer",
   description: {
-    long: "Explore the portfolio of Kuldeep Pravin Lakhera — B.Tech in Computer Engineering student and Full Stack Web Developer. Experienced in building high-performance MERN applications, real-time WebSocket systems, and scalable APIs.",
+    long: "Explore the portfolio of Kuldeep Lakhera — B.Tech in Computer Engineering student and Full Stack Web Developer. Experienced in building high-performance MERN applications, real-time WebSocket systems, and scalable APIs.",
     short:
-      "Portfolio of Kuldeep Pravin Lakhera — Full Stack Web Developer and Computer Engineering student specializing in the MERN stack and real-time systems.",
+      "Portfolio of Kuldeep Lakhera — Full Stack Web Developer and Computer Engineering student specializing in the MERN stack and real-time systems.",
   },
   keywords: [
-    "Kuldeep Pravin Lakhera",
     "Kuldeep Lakhera",
     "portfolio",
     "Full Stack Developer",
@@ -20,7 +19,7 @@ const config = {
     "Computer Engineering",
     "VPKBIET",
   ],
-  author: "Kuldeep Pravin Lakhera",
+  author: "Kuldeep Lakhera",
   email: "kuldeeplakhera018@gmail.com",
   site: "https://kuldeeplakhera.com", // Placeholder or personal domain
 

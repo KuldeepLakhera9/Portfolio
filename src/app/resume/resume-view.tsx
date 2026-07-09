@@ -89,14 +89,14 @@ export default function ResumeView() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="w-full overflow-hidden rounded-2xl bg-white text-black shadow-xl aspect-auto md:aspect-[210/297] print:shadow-none print:rounded-none"
         >
-          <ResumeDoodle title="Kuldeep Pravin Lakhera — Résumé">
+          <ResumeDoodle title="Kuldeep Lakhera — Résumé">
             {/* Interactive HTML Resume Sheet */}
             <div className="resume-sheet p-6 sm:p-10 md:p-12 text-black bg-white select-text h-full flex flex-col justify-between font-sans">
               
               {/* Header Info */}
               <div className="text-center space-y-3 pb-6 border-b border-gray-200">
                 <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-                  Kuldeep Pravin Lakhera
+                  Kuldeep Lakhera
                 </h1>
                 
                 {/* Contact Row */}

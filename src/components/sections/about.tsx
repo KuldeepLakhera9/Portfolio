@@ -51,7 +51,7 @@ const AboutSection = () => {
               className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed font-sans"
             >
               <p>
-                Hi, I am <strong className="text-foreground">Kuldeep Pravin Lakhera</strong>, a Computer Engineering student currently pursuing my Bachelor of Technology at <strong className="text-foreground">VPKBIET</strong> (CGPA: 9.1/10). I specialize in designing and shipping full-stack features using the <strong className="text-foreground">MERN (MongoDB, Express, React, Node.js) stack</strong>.
+                Hi, I am <strong className="text-foreground">Kuldeep Lakhera</strong>, a Computer Engineering student currently pursuing my Bachelor of Technology at <strong className="text-foreground">VPKBIET</strong> (CGPA: 9.1/10). I specialize in designing and shipping full-stack features using the <strong className="text-foreground">MERN (MongoDB, Express, React, Node.js) stack</strong>.
               </p>
               <p>
                 My professional experience includes working as a developer at active startups like <strong className="text-foreground">Insite Arc</strong> and <strong className="text-foreground">Nexoraa Tech</strong>, where I built responsive client-facing interfaces, integrated RESTful APIs, and optimized databases. 

@@ -4,6 +4,8 @@ import {
   ResponsiveDialog,
   ResponsiveDialogContent,
   ResponsiveDialogTrigger,
+  ResponsiveDialogTitle,
+  ResponsiveDialogDescription,
 } from "../ui/responsive-dialog";
 import { FloatingDock } from "../ui/floating-dock";
 import { ScrollArea } from "../ui/scroll-area";
@@ -61,9 +63,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 min-w-0">
-                <h4 className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
+                <ResponsiveDialogTitle className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
                   {project.title}
-                </h4>
+                </ResponsiveDialogTitle>
+                <ResponsiveDialogDescription className="sr-only">
+                  Detailed view of project: {project.title}
+                </ResponsiveDialogDescription>
                 <span className="shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-0.5">
                   {project.category}
                 </span>

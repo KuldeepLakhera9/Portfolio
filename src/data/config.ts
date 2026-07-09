@@ -33,7 +33,7 @@ const config = {
   social: {
     twitter: "https://www.linkedin.com/in/kuldeep-lakhera-a78373290/", // fallback to LinkedIn if Twitter isn't on resume
     linkedin: "https://www.linkedin.com/in/kuldeep-lakhera-a78373290/",
-    instagram: "https://github.com/KuldeepLakhera9", // fallback to GitHub
+    instagram: "https://www.instagram.com/kuldeeplakhera_/", // fallback to GitHub
     facebook: "https://github.com/KuldeepLakhera9",
     github: "https://github.com/KuldeepLakhera9",
   },

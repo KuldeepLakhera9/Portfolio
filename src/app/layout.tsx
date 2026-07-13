@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   description: config.description.long,
   keywords: config.keywords,
   authors: [{ name: config.author }],
+  icons: {
+    icon: "/icon.jpeg",
+    shortcut: "/icon.jpeg",
+  },
   openGraph: {
     title: config.title,
     description: config.description.short,
@@ -72,7 +76,11 @@ export default function RootLayout({
       <head>
         {/* The Spline runtime lazy-loads its wasm from unpkg; warm the
             connection early so the 3D scene starts faster. */}
-        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://unpkg.com"
+          crossOrigin="anonymous"
+        />
         {process.env.UMAMI_DOMAIN && process.env.UMAMI_SITE_ID ? (
           <Script
             defer

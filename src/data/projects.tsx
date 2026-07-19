@@ -88,6 +88,11 @@ const PROJECT_SKILLS = {
   socketio: brand("Socket.io", "socketdotio-mono.svg"),
   mapbox: brand("Mapbox API", "xyflow-mono.svg"), // reuse xyflow as map representation
   cloudinary: brand("Cloudinary", "cloudflare-mono.svg"), // reuse cloudflare as cloud upload asset
+  nextjs: brand("Next.js", "nextdotjs-mono.svg"),
+  framer: brand("Framer Motion", "motion.svg"),
+  docker: brand("Docker", "docker-mono.svg"),
+  gsap: brand("GSAP", "gsap-mono.svg"),
+  ai: brand("AI APIs", "anthropic-mono.svg"),
 };
 
 export type Project = {
@@ -104,73 +109,22 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: "zerodha-clone",
-    category: "Stock Trading",
-    title: "Zerodha Clone",
-    src: `${BASE_PATH}/zerodha-clone.png`,
-    screenshots: ["zerodha-clone.png"],
-    live: "#",
-    github: "https://github.com/KuldeepLakhera9",
+    id: "devnotes",
+    category: "Full-Stack Blog",
+    title: "DevNotes",
+    src: `${BASE_PATH}/devnotes.png`,
+    screenshots: ["devnotes.png"],
+    live: "https://blogs.kuldeeplakhera.me",
+    github: "https://github.com/KuldeepLakhera9/Blog",
     skills: {
       frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.nextjs,
+        PROJECT_SKILLS.ts,
         PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.framer,
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
         PROJECT_SKILLS.mongo,
-      ],
-    },
-    get content() {
-      return (
-        <div className="space-y-4">
-          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
-            Engineered a full-stack stock trading platform modeled on Zerodha, featuring live market data visualization, order placement, and portfolio tracking.
-          </TypographyP>
-          
-          <div className="mt-4">
-            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Engineered full-stack stock trading platform with dynamic charting</li>
-              <li>Designed secure authentication and a RESTful backend for portfolio management</li>
-              <li>Built a responsive React front-end with real-time portfolio tracking</li>
-            </ul>
-          </div>
-
-          <div className="mt-4 mb-6">
-            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Challenges Solved</h5>
-            <p className="text-sm text-muted-foreground">
-              Developing a robust state synchronization model to simulate live market movements on the client while maintaining consistent ledger balances on the REST backend.
-            </p>
-          </div>
-
-          <SlideShow images={[`${BASE_PATH}/zerodha-clone.png`]} />
-          <ProjectsLinks live={this.live} github={this.github} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "wanderlust",
-    category: "Marketplace",
-    title: "Wanderlust",
-    src: `${BASE_PATH}/wanderlust.png`,
-    screenshots: ["wanderlust.png"],
-    live: "#",
-    github: "https://github.com/KuldeepLakhera9",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.mapbox,
         PROJECT_SKILLS.cloudinary,
       ],
     },
@@ -178,26 +132,27 @@ const projects: Project[] = [
       return (
         <div className="space-y-4">
           <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
-            Architected a scalable lodging marketplace with secure JWT-based authentication and full CRUD functionality for property listings.
+            A production-grade, single-author blogging platform with a modern UI and a secure admin dashboard. Built with performance, SEO, and scalability in mind.
           </TypographyP>
 
           <div className="mt-4">
             <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Robust JWT-based user authentication and CRUD property posting capabilities</li>
-              <li>Mapbox API integration for interactive real-time geolocation searches</li>
-              <li>Optimized Cloudinary integrations for fast, responsive image loading and hosting</li>
+              <li>SEO Optimized & Markdown Blog Editor</li>
+              <li>Admin Dashboard & Image Upload via Cloudinary</li>
+              <li>Dynamic Categories & Tags filtering with full-text Search</li>
+              <li>Responsive UI with Dark Mode, Reading Time, and View Counter</li>
             </ul>
           </div>
 
           <div className="mt-4 mb-6">
-            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Performance Achievements</h5>
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Tech Stack Details</h5>
             <p className="text-sm text-muted-foreground">
-              Improved database response times by **20%** through streamlined index optimizations and custom Express middleware.
+              Utilizes Next.js 16, TypeScript, Tailwind CSS, and Framer Motion on the frontend. Backed by MongoDB (Mongoose), NextAuth/Auth.js for secure admin controls, and Cloudinary for asset storage.
             </p>
           </div>
 
-          <SlideShow images={[`${BASE_PATH}/wanderlust.png`]} />
+          <SlideShow images={[`${BASE_PATH}/devnotes.png`]} />
           <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
@@ -210,7 +165,7 @@ const projects: Project[] = [
     src: `${BASE_PATH}/quizpulse.png`,
     screenshots: ["quizpulse.png"],
     live: "#",
-    github: "https://github.com/KuldeepLakhera9",
+    github: "https://github.com/KuldeepLakhera9/QuizPulse",
     skills: {
       frontend: [
         PROJECT_SKILLS.js,
@@ -228,15 +183,16 @@ const projects: Project[] = [
       return (
         <div className="space-y-4">
           <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
-            Developed a live quiz hosting platform enabling users to create, host, and participate in multiplayer quizzes in real time.
+            A Kahoot-inspired multiplayer quiz platform where users can create and join live quiz rooms with real-time leaderboards.
           </TypographyP>
 
           <div className="mt-4">
             <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>WebSocket-driven live connection management via Socket.io</li>
-              <li>Real-time score synchronizations and instant user leaderboards</li>
-              <li>Polished responsive hosting dashboards and contestant gameplay layouts</li>
+              <li>Live Quiz Rooms with WebSocket-driven Socket.IO connections</li>
+              <li>Real-Time Scoreboard & interactive answer timers</li>
+              <li>Multiplayer support with admin quiz control dashboard</li>
+              <li>Fully responsive layout tailored for desktops and mobile screens</li>
             </ul>
           </div>
 
@@ -248,6 +204,324 @@ const projects: Project[] = [
           </div>
 
           <SlideShow images={[`${BASE_PATH}/quizpulse.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "learnsphere",
+    category: "Education",
+    title: "LearnSphere",
+    src: `${BASE_PATH}/learnsphere.png`,
+    screenshots: ["learnsphere.png"],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9/tech-playground",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.js,
+      ],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            A modern responsive learning dashboard for students featuring analytics, course management, and progress tracking.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Interactive Dashboard Analytics tracking study metrics</li>
+              <li>Clean, responsive course cards and management listings</li>
+              <li>Visual progress tracking components and achievements breakdown</li>
+              <li>Responsive design built with React 19, Vite, and Tailwind CSS v4</li>
+            </ul>
+          </div>
+
+          <div className="mt-4 mb-6">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Design Focus</h5>
+            <p className="text-sm text-muted-foreground">
+              Prioritizes visual hierarchy and minimalist design tokens to offer students a distraction-free, highly intuitive progress-oriented environment.
+            </p>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/learnsphere.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "zerodha-clone",
+    category: "FinTech",
+    title: "Zerodha Clone",
+    src: `${BASE_PATH}/zerodha-clone.png`,
+    screenshots: ["zerodha-clone.png"],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9/Zerodha",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+      ],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            A full-stack clone of Zerodha's Kite trading platform with authentication, trading dashboard, and portfolio management.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Secure Authentication with JWT and Bcrypt hashing</li>
+              <li>Interactive Dashboard with real-time portfolio tracking & charts</li>
+              <li>Holdings, Orders, and Portfolio management pages</li>
+              <li>Responsive and pixel-perfect clone UI of Zerodha Kite</li>
+            </ul>
+          </div>
+
+          <div className="mt-4 mb-6">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Challenges Solved</h5>
+            <p className="text-sm text-muted-foreground">
+              Developing a robust state synchronization model to simulate live market movements on the client while maintaining consistent ledger balances on the REST backend.
+            </p>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/zerodha-clone.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "amul-3d",
+    category: "3D Showcase",
+    title: "Amul 3D Showcase",
+    src: `${BASE_PATH}/amul-showcase.png`,
+    screenshots: ["amul-showcase.png"],
+    live: "https://amul.kuldeeplakhera.me",
+    github: "https://github.com/KuldeepLakhera9/Amul-3D",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.gsap,
+      ],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            An immersive scroll-based storytelling website featuring a 3D product animation built using image sequences instead of WebGL.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>229 Frame Animation pre-rendering via Canvas API for extreme performance</li>
+              <li>GSAP & ScrollTrigger controlling precise video frames relative to scroll position</li>
+              <li>Lenis integration for ultra-smooth inertia-based scrolling</li>
+              <li>Highly-interactive modern landing page showcasing iconic Amul branding</li>
+            </ul>
+          </div>
+
+          <div className="mt-4 mb-6">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Aesthetic Rationale</h5>
+            <p className="text-sm text-muted-foreground">
+              Bypassed WebGL performance bottlenecks by streaming a compressed, high-fidelity 229-frame PNG sequence onto a HTML5 Canvas, achieving 60fps scrolling animations on mobile and lower-end hardware.
+            </p>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/amul-showcase.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "portfolio-site",
+    category: "Portfolio",
+    title: "Personal Portfolio",
+    src: `${BASE_PATH}/portfolio.png`,
+    screenshots: ["portfolio.png"],
+    live: "https://kuldeeplakhera.me",
+    github: "https://github.com/KuldeepLakhera9/Portfolio",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.nextjs,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.framer,
+      ],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            The personal portfolio website featuring dark mode, project showcase grids, dynamic animations, and contact utilities.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Responsive next-generation layout with seamless dark/light support</li>
+              <li>Framer Motion smooth scroll-triggers and page transitions</li>
+              <li>Interactive project display cards and filter tabs</li>
+              <li>Fully integrated modern Contact Form</li>
+            </ul>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/portfolio.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "wanderlust",
+    category: "Marketplace",
+    title: "Wanderlust",
+    src: `${BASE_PATH}/wanderlust.png`,
+    screenshots: ["wanderlust.png"],
+    live: "https://wanderlust-7fd4.onrender.com/listings",
+    github: "https://github.com/KuldeepLakhera9/Wanderlust",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.mapbox,
+        PROJECT_SKILLS.cloudinary,
+      ],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            An Airbnb-inspired full-stack marketplace with property listings, reviews, secure maps integration, and custom media uploads.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Authentication & Session Management utilizing Passport.js</li>
+              <li>Full CRUD operations on property listings & ratings/reviews</li>
+              <li>Mapbox API integration for interactive geographical location pins</li>
+              <li>Cloudinary & Multer integration for reliable serverless image storage</li>
+            </ul>
+          </div>
+
+          <div className="mt-4 mb-6">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Performance Achievements</h5>
+            <p className="text-sm text-muted-foreground">
+              Improved database response times by **20%** through streamlined index optimizations and custom Express middleware.
+            </p>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/wanderlust.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "convosecure",
+    category: "Chat App",
+    title: "ConvoSecure",
+    src: `${BASE_PATH}/convosecure.png`,
+    screenshots: ["convosecure.png"],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9/Convo",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.socketio,
+      ],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            A real-time messaging application designed with security and minimal connection latency in mind.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Real-time bidirectional communication powered by Socket.io</li>
+              <li>Secure authentication and message logs storage in MongoDB</li>
+              <li>Active/Online users indicators and status counters</li>
+              <li>Fully fluid responsive user interface on all modern screens</li>
+            </ul>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/convosecure.png`]} />
+          <ProjectsLinks live={this.live} github={this.github} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "portway",
+    category: "DevOps",
+    title: "Portway",
+    src: `${BASE_PATH}/portway.png`,
+    screenshots: ["portway.png"],
+    live: "#",
+    github: "https://github.com/KuldeepLakhera9/portway",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.docker,
+      ],
+    },
+    get content() {
+      return (
+        <div className="space-y-4">
+          <TypographyP className="font-mono text-sm leading-relaxed text-muted-foreground">
+            A deployment platform inspired by Vercel for building and hosting web applications in isolated environments.
+          </TypographyP>
+
+          <div className="mt-4">
+            <h5 className="font-bold text-foreground text-sm uppercase tracking-wider mb-2">Key Features</h5>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Automatic deployment configuration linked to user repositories</li>
+              <li>Docker Containers for sandboxed building and dependency insulation</li>
+              <li>Real-time build logs stream and deploy progress indicators</li>
+              <li>Interactive dashboard to monitor deploy statuses and project URLs</li>
+            </ul>
+          </div>
+
+          <SlideShow images={[`${BASE_PATH}/portway.png`]} />
           <ProjectsLinks live={this.live} github={this.github} />
         </div>
       );
